@@ -1,0 +1,101 @@
+Week 1 : 
+	• Lecture slides
+		○ Key Concepts
+			§ Measure of Good Software
+				□ Modularity
+					® Encapsulation
+						◊ Declare the variables of a class as private.
+						◊ Provide public setter and getter methods to modify and view the variables values.
+					® Abstract Data Type
+				□ Cohesion : how focused are the responsibilities of a module
+				□ Coupling : dependency between modules
+				□ Modifiability and Testability 
+				□ Safety 
+			§ Access levels
+				Modifier	Class	Package	Subclass	World
+				public	Y	Y	Y	Y
+				protected	Y	Y	Y	N
+				no modifier	Y	Y	N	N
+				private	Y	N	N	N
+		○ Classes, Objects, Fields, Methods
+		○ Constructors
+			§ no return 
+			§ constructor chaining : calls another constructor of same class 
+			§ If you do not implement any constructor in your class, Java compiler inserts a default constructor 
+			§ this.x = x 
+				□ because it will go outside the scope of constructor - not local 
+			§ super()
+				□ Whenever a child class constructor gets invoked it implicitly invokes the constructor of parent class.
+				□ 1) super()(or parameterized super must be the first statement in constructor otherwise you will get the compilation error: “Constructor call must be the first statement in a constructor”
+				□ 2) When we explicitly placed super in the constructor, the java compiler didn’t call the default no-arg constructor of parent class.
+				□ https://beginnersbook.com/2014/07/super-keyword-in-java-with-example/
+				□ method overriding 
+					® What if the child class is not overriding any method: No need of super
+					® Access modifier of the overriding method (method of subclass) cannot be more restrictive than the overridden method of parent class. 
+					® The argument list of overriding method (method of child class) must match the Overridden method(the method of parent class).The data types of the arguments and their sequence should exactly match.
+					® private, static and final methods cannot be overridden as they are local to the class.
+						◊ this.getTickets().add(newTicket);
+						◊ was getting error when doing super.add(newTicket) because it was private or something 
+						◊ we use getters and setters  
+					® Binding of overridden methods happen at runtime which is known as dynamic binding
+					® Overriding method (method of child class) can throw unchecked exceptions, regardless of whether the overridden method(method of parent class) throws any exception or not. However the overriding method should not throw checked exceptions that are new or broader than the ones declared by the overridden method.
+					® If a class is extending an abstract class or implementing an interface then it has to override all the abstract methods unless the class itself is a abstract class.
+			§ this() and super() should be the first statement in the constructor code. If you don’t mention them, compiler does it for you accordingly.
+				□ https://beginnersbook.com/2013/03/constructors-in-java/
+				□ Default constructor 
+			§ constructor overloading : more than one constructor with different parameters list
+		○ Working with related classes
+		○ Collections
+			§ LinkedList 
+		○ this
+			§ https://javabeginnerstutorial.com/core-java-tutorial/this-keyword-java/
+				□ field
+				□ constructor
+				□ method
+				□ as a method parameter
+		○ Interfaces
+		○ Abstract classes
+		○ -
+		○ Others
+			§ -
+			§ When do you use Java's @Override annotation and why?
+				□ compiler checking to make sure you actually are overriding a method when you think you are - spelling mistakes, matching parameters
+				□ code easier to understand
+			§ method overloading
+				□ https://beginnersbook.com/2013/05/method-overloading/
+				□ declaring same method with different parameters - 3 ways
+					® number of parameters
+					® data type of parameters
+					® sequence of data type of parameters
+				□ if two methods have same name, same parameters and have different or same return type, then this is not a valid method overloading
+				□ Method overloading is an example of static polymorphism 
+				□ static polymorphism - also known as compile time binding or early binding
+				□ static binding happens at compile time, eg. method overloading. 
+				□ type promotion - type of smaller size to type of bigger size 
+					® byte → short → int → long
+short → int → long
+int → long → float → double
+float → double
+long → float → double 
+			§ variable num1 = (expression) ? value if true : value if false
+			§ Final
+				□ https://www.geeksforgeeks.org/final-keyword-java/
+				□ Final variable - to create constant variable
+				□ Final Methods - prevent method overriding
+				□ Final classes - prevent inheritance 
+			§ toString() 
+			§ Static fields and methods ; static block
+				□ static variables also called Class variables ; shared among all instances of class 
+				□ can access it without object.
+				□ https://beginnersbook.com/2013/04/java-static-class-block-methods-variables/
+			§ for
+				□ for (i = 0, j = 0; i < lname.size() || j < rname.size(); i++, j++)
+				□ int arr[]={2,11,45,9};
+ for (int num : arr) {
+  System.out.println(num);
+ }
+				□ -
+        
+
+Week 2 
+	• Lecture Slides 
